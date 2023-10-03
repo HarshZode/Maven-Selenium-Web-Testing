@@ -17,8 +17,8 @@ public class SeleniumTest {
 
     @BeforeTest
     void setup() {
-//        System.setProperty("webdriver.gecko.driver", "asset/geckodriver.exe");
-        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
+        System.setProperty("webdriver.gecko.driver", "assets/geckodriver-v0.33.0-linux32/geckodriver");
+//        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
         // driver.get("http://127.0.0.1:5500/index.html");
         driver.get("http://34.93.153.192:80");
 

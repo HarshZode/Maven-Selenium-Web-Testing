@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -13,11 +14,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.OperatingSystem;
 public class SeleniumTest {
 
-    public static WebDriver driver = new FirefoxDriver();
 
+    public static ChromeOptions options = new ChromeOptions();
+    public static WebDriver driver = new ChromeDriver(options);
     @BeforeTest
     void setup() {
-        System.setProperty("webdriver.gecko.driver", "assets/geckodriver-v0.33.0-linux32/geckodriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+
 //        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
         // driver.get("http://127.0.0.1:5500/index.html");
         driver.get("http://34.93.153.192:80");

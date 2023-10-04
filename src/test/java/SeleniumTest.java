@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -20,12 +21,19 @@ public class SeleniumTest {
     @BeforeTest
     void setup() {
         // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-         WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
-        FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("headless");
+         // WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
+        // FirefoxOptions options = new FirefoxOptions();
+        // options.addArguments("headless");
 
 //        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
         // driver.get("http://127.0.0.1:5500/index.html");
+        FirefoxBinary firefoxBinary = new FirefoxBinary();
+		firefoxBinary.addCommandLineOptions("--headless");
+		firefoxBinary.addCommandLineOptions("--no-sandbox");
+		System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+		FirefoxOptions firefoxOptions = new FirefoxOptions();
+		firefoxOptions.setBinary(firefoxBinary);
+		FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
         driver.get("http://34.93.153.192:80");
 
     }

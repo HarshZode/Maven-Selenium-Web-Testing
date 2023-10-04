@@ -16,9 +16,9 @@ import io.github.bonigarcia.wdm.config.OperatingSystem;
 public class SeleniumTest {
 
 
-    public static FirefoxOptions firefoxOptions = new FirefoxOptions();
+    // public static FirefoxOptions firefoxOptions = new FirefoxOptions();
 //    public static WebDriver driver = new ChromeDriver(firefoxOptions);
-    public static FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
+    // public static FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
     @BeforeTest
     void setup() {
         // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");

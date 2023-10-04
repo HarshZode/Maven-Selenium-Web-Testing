@@ -16,44 +16,48 @@ import io.github.bonigarcia.wdm.config.OperatingSystem;
 public class SeleniumTest {
 
 
-    public static ChromeOptions options = new ChromeOptions();
-    public static WebDriver driver = new ChromeDriver(options);
-    @BeforeTest
+//    public static FirefoxOptions firefoxOptions = new FirefoxOptions();
+//    public static WebDriver driver = new ChromeDriver(firefoxOptions);
+//    @BeforeTest
+    @Test
     void setup() {
         // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-         // WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
+        // WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
         // FirefoxOptions options = new FirefoxOptions();
         // options.addArguments("headless");
 
 //        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
         // driver.get("http://127.0.0.1:5500/index.html");
         FirefoxBinary firefoxBinary = new FirefoxBinary();
-		firefoxBinary.addCommandLineOptions("--headless");
-		firefoxBinary.addCommandLineOptions("--no-sandbox");
-		System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
-		FirefoxOptions firefoxOptions = new FirefoxOptions();
-		firefoxOptions.setBinary(firefoxBinary);
-		FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
+        firefoxBinary.addCommandLineOptions("--headless");
+        firefoxBinary.addCommandLineOptions("--no-sandbox");
+        System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.setBinary(firefoxBinary);
+        FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
         driver.get("http://34.93.153.192:80");
-
-    }
-
-    @Test
-    void firstTeststep(){
         driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("First Todo");
         driver.findElement(By.xpath("//*[@id=\"form\"]/button")).click();
         driver.findElement(By.xpath("//*[@id=\"todos\"]/li")).click();
-//        driver.close();
-    }
-    @Test
-    void secondTeststep(){
-        //Instantiate Action Class
-        Actions actions = new Actions(driver);
-
-        WebElement btnElement = driver.findElement(By.xpath("//*[@id=\"todos\"]/li"));
-        actions.contextClick(btnElement).perform();
         driver.close();
     }
+
+//    @Test
+//    void firstTeststep(){
+//        driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("First Todo");
+//        driver.findElement(By.xpath("//*[@id=\"form\"]/button")).click();
+//        driver.findElement(By.xpath("//*[@id=\"todos\"]/li")).click();
+////        driver.close();
+//    }
+//    @Test
+//    void secondTeststep(){
+//        //Instantiate Action Class
+//        Actions actions = new Actions(driver);
+//
+//        WebElement btnElement = driver.findElement(By.xpath("//*[@id=\"todos\"]/li"));
+//        actions.contextClick(btnElement).perform();
+//        driver.close();
+//    }
 }
 //    ####################################
 //    #     Other Example

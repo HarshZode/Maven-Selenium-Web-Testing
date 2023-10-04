@@ -35,7 +35,7 @@ public class SeleniumTest {
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setBinary(firefoxBinary);
-        FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
+        driver = new FirefoxDriver(firefoxOptions);
         driver.get("http://34.93.153.192:80");
 //        driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("First Todo");
 //        driver.findElement(By.xpath("//*[@id=\"form\"]/button")).click();

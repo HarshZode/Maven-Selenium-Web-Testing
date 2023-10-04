@@ -19,7 +19,7 @@ public class SeleniumTest {
     // public static FirefoxOptions firefoxOptions = new FirefoxOptions();
 //    public static WebDriver driver = new ChromeDriver(firefoxOptions);
     // public static FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
-    private WebDriver driver;
+    private FirefoxDriver driver;
     @BeforeTest
     void setup() {
         // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");

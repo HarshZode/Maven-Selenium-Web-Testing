@@ -15,20 +15,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.OperatingSystem;
 public class SeleniumTest {
 
-
-    // public static FirefoxOptions firefoxOptions = new FirefoxOptions();
-//    public static WebDriver driver = new ChromeDriver(firefoxOptions);
-    // public static FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
     private FirefoxDriver driver;
     @BeforeTest
     void setup() {
-        // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-        // WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
-        // FirefoxOptions options = new FirefoxOptions();
-        // options.addArguments("headless");
 
-//        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
-        // driver.get("http://127.0.0.1:5500/index.html");
+        // WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
+
         FirefoxBinary firefoxBinary = new FirefoxBinary();
         firefoxBinary.addCommandLineOptions("--headless");
         firefoxBinary.addCommandLineOptions("--no-sandbox");
@@ -37,10 +29,6 @@ public class SeleniumTest {
         firefoxOptions.setBinary(firefoxBinary);
         driver = new FirefoxDriver(firefoxOptions);
         driver.get("http://34.93.153.192:80");
-//        driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("First Todo");
-//        driver.findElement(By.xpath("//*[@id=\"form\"]/button")).click();
-//        driver.findElement(By.xpath("//*[@id=\"todos\"]/li")).click();
-//        driver.close();
     }
 
     @Test
@@ -48,10 +36,13 @@ public class SeleniumTest {
         driver.findElement(By.xpath("//*[@id=\"input\"]")).sendKeys("First Todo");
         driver.findElement(By.xpath("//*[@id=\"form\"]/button")).click();
         driver.findElement(By.xpath("//*[@id=\"todos\"]/li")).click();
-//        driver.close();
+    }
+     @Test
+    void secondTeststep(){
+         driver.findElement(By.xpath("//*[@id=\"todos\"]/li")).click();
     }
     @Test
-    void secondTeststep(){
+    void thirdTeststep(){
         //Instantiate Action Class
         Actions actions = new Actions(driver);
 

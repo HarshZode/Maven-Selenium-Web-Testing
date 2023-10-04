@@ -19,8 +19,9 @@ public class SeleniumTest {
     public static WebDriver driver = new ChromeDriver(options);
     @BeforeTest
     void setup() {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-        ChromeOptions options = new ChromeOptions();
+        // System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+         WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();
+        FirefoxOptions options = new FirefoxOptions();
         options.addArguments("headless");
 
 //        WebDriverManager.firefoxdriver().operatingSystem(OperatingSystem.LINUX).setup();

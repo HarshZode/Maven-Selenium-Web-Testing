@@ -28,7 +28,7 @@ public class SeleniumTest {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setBinary(firefoxBinary);
         driver = new FirefoxDriver(firefoxOptions);
-        driver.get("http://34.93.153.192:80");
+        driver.get("http://34.93.92.221:80");
     }
 
     @Test
